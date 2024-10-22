@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import sys
 import math
-from typing import Any, TypeVar
+from typing import Any
 
 
 if sys.version_info < (3, 11):
@@ -54,17 +54,17 @@ class LabUnc:
 
     def __mul__(self: Self, other: "LabUnc") -> Self:
         C = self.n * other.n
-        δC = C * self.combine(self.s / self.n, other.s / other.n)
+        deltaC = C * self.combine(self.s / self.n, other.s / other.n)
         return type(self)(C, δC)
 
     def __truediv__(self: Self, other: "LabUnc") -> Self:
         C = self.n / other.n
-        δC = C * self.combine(self.s / self.n, other.s / other.n)
+        deltaC = C * self.combine(self.s / self.n, other.s / other.n)
         return self.__class__(C, δC)
 
     def __pow__(self: Self, power: float) -> Self:
         C = self.n**power
-        δC = C * (power * self.s / self.n)
+        deltaC = C * (power * self.s / self.n)
         return self.__class__(C, δC)
 
 
