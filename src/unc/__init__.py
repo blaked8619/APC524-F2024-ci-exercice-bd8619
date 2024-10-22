@@ -55,17 +55,17 @@ class LabUnc:
     def __mul__(self: Self, other: "LabUnc") -> Self:
         C = self.n * other.n
         deltaC = C * self.combine(self.s / self.n, other.s / other.n)
-        return type(self)(C, δC)
+        return type(self)(C, deltaC)
 
     def __truediv__(self: Self, other: "LabUnc") -> Self:
         C = self.n / other.n
         deltaC = C * self.combine(self.s / self.n, other.s / other.n)
-        return self.__class__(C, δC)
+        return self.__class__(C, deltaC)
 
     def __pow__(self: Self, power: float) -> Self:
         C = self.n**power
         deltaC = C * (power * self.s / self.n)
-        return self.__class__(C, δC)
+        return self.__class__(C, deltaC)
 
 
 class StdUnc(LabUnc):
