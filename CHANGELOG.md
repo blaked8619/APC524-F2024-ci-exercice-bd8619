@@ -10,6 +10,10 @@ with nox -s tests or docs
 
 $ [tool.hatch.build.targets.wheel]
 $ packages = ["src/unc"]
+-----------------------------
+Second Commit
+added installing nox to the install dependencies in ci.yml
+changed pre-commit diff command to git diff in the Run pre-commit section
 
 
 
