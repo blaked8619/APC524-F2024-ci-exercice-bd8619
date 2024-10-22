@@ -1,4 +1,7 @@
+from __future__ import annotations
+
 import nox
+
 
 @nox.session
 def docs(session: nox.Session) -> None:
@@ -9,6 +12,7 @@ def docs(session: nox.Session) -> None:
     session.install(".[docs]")
     session.chdir("docs")
     session.run("sphinx-build", "-M", "html", ".", "build")
+
 
 @nox.session
 def tests(session: nox.Session) -> None:

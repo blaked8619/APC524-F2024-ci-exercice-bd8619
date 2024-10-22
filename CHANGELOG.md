@@ -18,7 +18,7 @@ changed pre-commit diff command to git diff in the Run pre-commit section
 ------------------------------------
 Third Commit
 I had several warings in the pre-commit check that were automatically identified. Some were changed automatically, these ones werent:
-changed δC to deltaC in __init__.py 
+changed δC to deltaC in __init__.py
 removed the unused import TypeVar
 added this to pyproject.toml to remove deprecation warning:
 [tool.ruff.lint.per-file-ignores]

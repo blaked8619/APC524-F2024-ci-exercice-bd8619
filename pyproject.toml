@@ -53,4 +53,4 @@ isort.required-imports = ["from __future__ import annotations"]
 [tool.hatch.build.targets.wheel]
 packages = [ "src/unc" ]
 
- 
+
